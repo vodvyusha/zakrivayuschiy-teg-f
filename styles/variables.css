@@ -1,1 +1,30 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --accent-font: "PressStart2P-Regular";
+  --main-font: "Inter-Variable";
+  --text-weight: 410;
+  --title-weight: 715;
+  --text-size: 18px;
+  --font-size-small: 14px;
+  --header-logo-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  --header-title-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  --container-inline-size: clamp(375px, calc(30.5vw + 260.6px), 700px);
+  --header-spacing: 98px;
+  --card-spacing: 50px;
+  --border: 2px solid #000;
+  --button-bg-color: #fff;
+  --button-text-color: #fff;
+  --text-stroke-color: rgba(255, 255, 255, 0.5);
+  --contour-color: #000;
+  --animation-fill-color: rgba(255, 0, 0, 1);
+  --animation-hover-color: #000;
+  --bg-gradient:
+    repeating-linear-gradient(to right, #d3d3d3 0px 2px, #d3d3d300 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0px 2px, #d3d3d300 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+}
+
+@media (width <= 375px) {
+  :root {
+    --container-inline-size: 100%;
+  }
+}
