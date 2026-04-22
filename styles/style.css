@@ -165,6 +165,7 @@
 .card__save-button {
   align-items: center;
   gap: 8px;
+  margin-inline: auto;
   margin-block-end: 100px;
   cursor: pointer;
   inline-size: 335px;
@@ -260,6 +261,26 @@ dialog::backdrop {
 }
 
 .card__like-button:hover {
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
+  outline: none;
+}
+
+.card__save-button:focus {
+  outline: none;
+  cursor: pointer;
+}
+
+.card__save-button:focus-visible {
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
+  outline: none;
+}
+
+.dialog__button:focus {
+  outline: none;
+  cursor: pointer;
+}
+
+.dialog__button:focus-visible {
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
   outline: none;
 }
