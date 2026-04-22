@@ -69,7 +69,7 @@
   block-size: 700px;
 }
 
-.watermark {
+.label {
   position: absolute;
   color: rgba(0, 0, 0, 0.5);
   font-weight: 400;
@@ -88,7 +88,7 @@
   (text-stroke: 1px var(--text-stroke-color)) or
     (-webkit-text-stroke: 1px var(--text-stroke-color))
 ) {
-  .watermark {
+  .label {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--text-stroke-color);
     text-stroke: 1px var(--text-stroke-color);
