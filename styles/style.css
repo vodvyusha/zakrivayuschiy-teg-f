@@ -3,6 +3,7 @@
   font-family: var(--main-font), sans-serif;
   background-image: var(--bg-gradient);
   background-size: cover;
+  background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: "wght" var(--text-weight);
@@ -22,7 +23,6 @@
   margin-block-end: var(--header-spacing);
   border: var(--border);
   padding-block: clamp(122px, calc(119.183px + 0.751vw), 130px);
-  max-block-size: 368px;
 }
 
 .header__logo-group {
@@ -66,7 +66,7 @@
 .card__image {
   width: 100%;
   object-fit: cover;
-  block-size: 700px;
+  aspect-ratio: 1 / 1;
 }
 
 .label {
@@ -99,7 +99,7 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
-  margin: 21px 25px 25px;
+  margin: 25px 25px 25px;
 }
 
 .card__description {
@@ -125,6 +125,8 @@
   border: var(--border);
   overflow: hidden;
   background-color: var(--button-bg-color);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .card__icon-button {
@@ -167,7 +169,6 @@
   gap: 8px;
   margin-inline: auto;
   margin-block-end: 100px;
-  cursor: pointer;
   inline-size: 335px;
   block-size: 55px;
 }
@@ -181,9 +182,9 @@
 
 .dialog {
   width: 353px;
-  height: 191px;
   border: var(--border);
   padding: 0;
+  text-transform: uppercase;
 }
 
 .dialog[open] .dialog__description {
@@ -201,6 +202,7 @@
 
 .dialog__button {
   margin-inline: auto;
+  margin-block-end: 30px;
   inline-size: 293px;
   block-size: 38px;
 }
@@ -241,12 +243,11 @@ dialog::backdrop {
   filter: hue-rotate(340deg) saturate(200%) contrast(120%);
 }
 
-.card__like-button:focus {
+.button:focus {
   outline: none;
-  cursor: pointer;
 }
 
-.card__like-button:focus-visible {
+.button:focus-visible {
   box-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
   outline: none;
 }
@@ -257,31 +258,6 @@ dialog::backdrop {
 
 .card__icon-button:focus-visible {
   border: var(--border);
-  outline: none;
-}
-
-.card__like-button:hover {
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
-  outline: none;
-}
-
-.card__save-button:focus {
-  outline: none;
-  cursor: pointer;
-}
-
-.card__save-button:focus-visible {
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
-  outline: none;
-}
-
-.dialog__button:focus {
-  outline: none;
-  cursor: pointer;
-}
-
-.dialog__button:focus-visible {
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 1);
   outline: none;
 }
 
@@ -332,48 +308,40 @@ dialog::backdrop {
 
 .like-icon:hover .core {
   fill: var(--animation-hover-color);
-  transition-delay: 0s;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:hover .main-body {
   fill: var(--animation-hover-color);
-  transition-delay: 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon:active .core {
   fill: var(--animation-fill-color);
-  transition-delay: 0s;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:active .main-body {
   fill: var(--animation-fill-color);
-  transition-delay: 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .core {
   fill: var(--animation-fill-color);
-  transition-delay: 0s;
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--animation-fill-color);
-  transition-delay: 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .contour {
   fill: var(--animation-fill-color);
-  transition: 0.3s 0.06s;
+  transition: fill 0.3s linear 0.06s;
 }
 
 @media (width <= 375px) {
-  .card__image {
-    block-size: 371px;
-  }
-
-  .header {
-    max-block-size: 327px;
-  }
-
   .card__save-button {
     flex-direction: column;
     inline-size: 306px;
